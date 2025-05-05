@@ -65,7 +65,9 @@ The [CPU usage analysis](https://github.com/suryansh4424/VM_Scheduler-CloudSim-2
 
 ## Key Observations from Phase 1-
 Over-Provisioned Entries (<50% Utilization): 63,734
+
 Underutilized Entries (Zero CPU Usage): 11,862
+
 Wasted CPU Resources (Request - Usage):
 - Mean: 7.92
 - Max: 578.93

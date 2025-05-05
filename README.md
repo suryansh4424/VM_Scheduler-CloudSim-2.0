@@ -19,11 +19,16 @@ This predictive model will be benchmarked against traditional heuristic approach
 
 # [Phase 1](https://github.com/suryansh4424/VM_Scheduler-CloudSim/tree/main/Phase%201): Data Analysis and Insight
 
-To gather, prepare, and analyze the dataset to understand the CPU usage patterns. This will provide foundational insights for building predictive models and optimizing resource scheduling in subsequent phases.
+In the initial stage of our project, we began with primitive CPU usage data simulated from CloudSim, which helped identify peak usage times and gave a general idea of usage patterns in a virtualized cloud environment. However, the data proved insufficient for building an accurate and scalable model due to its limited dimensions and lack of real-world complexity.
+
+To enhance the fidelity of our analysis, we transitioned to working with a more comprehensive and realistic dataset: Google’s Borg cluster traces. This dataset offered rich telemetry on resource management and scheduling in large-scale datacenter environments.
+
+These features enabled deep insight into workload behavior, scheduling efficiency, and resource allocation patterns.
 
 ## **1. Data Collection:**
-- CPU usage data was collected from CloudSim simulations, representing real-world cloud environments.
-- The dataset originally consist of 348 files, each containing 288 CPU usage values. These files were merged into a single dataset with over 100,000 data points to facilitate comprehensive modeling.
+-Used Bitbrains fastStorage dataset (GWA-T-12) with traces from 1,250 VMs.
+-Data captured every 300ms, resulting in ~8,600 rows per file (~43 minutes of data).
+-Merged 348 files into a dataset with over 100,000 data points.
 
 ## **2. Data Preparation:**
 ### **Column Standardization:**
@@ -34,6 +39,17 @@ To gather, prepare, and analyze the dataset to understand the CPU usage patterns
 
 ### **Feature Engineering:**
 - Extracted the Hour from each timestamp to analyze CPU usage patterns on an hourly basis.
+
+After cleaning the data and removing unnecessary tables, we focused on the following key attributes:
+-ID
+-scheduling_class
+-priority
+-resource_request
+-average_usage
+-maximum_usage
+-cpu_usage_distribution
+-tail_cpu_usage_distribution
+-Timestamp
 
 
 ## **3. Data Analysis:**
@@ -46,6 +62,14 @@ This analysis helped in visualizing CPU load distribution throughout the day and
 
 ## **4. Results:**
 The [CPU usage analysis](https://github.com/suryansh4424/VM_Scheduler-CloudSim/blob/main/Phase%201/CPU_usage_analysis.ipynb) revealed that the peak CPU usage occurred at Hour X, with an average CPU utilization of Y%.
+
+# Key Observations from Phase 1-
+Over-Provisioned Entries (<50% Utilization): 63,734
+Underutilized Entries (Zero CPU Usage): 11,862
+Wasted CPU Resources (Request - Usage):
+- Mean: 7.92
+- Max: 578.93
+- Min: -112.61 (indicating over-utilization in some rare cases)
 
 # [Phase 2](https://github.com/suryansh4424/VM_Scheduler-CloudSim/tree/main/Phase%202): Model Development and Evaluation
 

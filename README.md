@@ -35,6 +35,8 @@ To gather, prepare, and analyze the dataset to understand the CPU usage patterns
 ### **Feature Engineering:**
 - Extracted the Hour from each timestamp to analyze CPU usage patterns on an hourly basis.
 
+  ![](pictures/table1.png "")
+
 ## **3. Data Analysis:**
 ### **Hourly CPU Usage Calculation:**
 - The dataset was grouped by the hour of the day to compute the average CPU usage for each hour.

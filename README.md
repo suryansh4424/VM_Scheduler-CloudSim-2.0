@@ -41,15 +41,15 @@ These features enabled deep insight into workload behavior, scheduling efficienc
 - Extracted the Hour from each timestamp to analyze CPU usage patterns on an hourly basis.
 
 After cleaning the data and removing unnecessary tables, we focused on the following key attributes:
--ID
--scheduling_class
--priority
--resource_request
--average_usage
--maximum_usage
--cpu_usage_distribution
--tail_cpu_usage_distribution
--Timestamp
+- ID
+- scheduling_class
+- priority
+- resource_request
+- average_usage
+- maximum_usage
+- cpu_usage_distribution
+- tail_cpu_usage_distribution
+- Timestamp
 
 
 ## **3. Data Analysis:**
@@ -63,7 +63,7 @@ This analysis helped in visualizing CPU load distribution throughout the day and
 ## **4. Results:**
 The [CPU usage analysis](https://github.com/suryansh4424/VM_Scheduler-CloudSim/blob/main/Phase%201/CPU_usage_analysis.ipynb) revealed that the peak CPU usage occurred at Hour X, with an average CPU utilization of Y%.
 
-# Key Observations from Phase 1-
+## Key Observations from Phase 1-
 Over-Provisioned Entries (<50% Utilization): 63,734
 Underutilized Entries (Zero CPU Usage): 11,862
 Wasted CPU Resources (Request - Usage):
